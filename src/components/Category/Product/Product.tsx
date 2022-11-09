@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {FC} from "react";
 import {IProduct} from "./IProduct";
 import DynamicCartButton from "../../Buttons/DynamicCartButton/DynamicCartButton";
-import toUpper from "utils/ToUpper";
+import toUpper from "utils/toUpper/toUpper";
 import SmallGrey from 'components/styled/SmallGrey'
 import Price from 'components/styled/Price'
 

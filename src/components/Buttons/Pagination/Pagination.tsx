@@ -19,10 +19,10 @@ const Wrapper = styled.div`
 
 
 const Pagination: FC<IPagination> = ({page, next, prev}) =>
-        <Wrapper>
-            <Button onClick={prev}>{'<'}</Button>
-            <h3>{page}</h3>
-            <Button onClick={next}>{'>'}</Button>
-        </Wrapper>
+    <Wrapper>
+        <Button onClick={prev} data-testid='increase'>&lt;</Button>
+        <h3 data-testid='page'>{page}</h3>
+        <Button onClick={next} data-testid='decrease'>&gt;</Button>
+    </Wrapper>
 
 export default Pagination;

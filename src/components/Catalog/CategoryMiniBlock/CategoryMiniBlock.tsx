@@ -9,10 +9,7 @@ const Container = styled(NavLink)`
   position: relative;
 `
 const Image = styled.img`
-  background-size: cover;
-  background-repeat: repeat;
   transition: transform .2s;
-
   &:hover {
     transform: scale(1.1);
   }

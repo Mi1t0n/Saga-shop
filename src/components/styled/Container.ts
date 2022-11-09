@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import {media} from './Global'
+
 
 const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
-  @media ${media.laptop} {
+  @media ${({theme}) => theme.media.laptop} {
     width: 1440px;
   }
-  @media ${media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     width: 768px;
   }
-  @media ${media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     width: 320px;
   }
 `

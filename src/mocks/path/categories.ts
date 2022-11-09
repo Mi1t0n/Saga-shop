@@ -1,4 +1,4 @@
-import randomID from "../../utils/randomID";
+import randomID from "../../utils/randomID/randomID";
 import {faker} from "@faker-js/faker";
 import {ICategoryMiniBlock} from "components/Catalog/CategoryMiniBlock/ICategoryMiniBlock";
 
