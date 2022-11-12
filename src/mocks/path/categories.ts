@@ -2,7 +2,11 @@ import randomID from "../../utils/randomID/randomID";
 import {faker} from "@faker-js/faker";
 import {ICategoryMiniBlock} from "components/Catalog/CategoryMiniBlock/ICategoryMiniBlock";
 
-const categories: ICategoryMiniBlock[] = [
+interface Icategories extends ICategoryMiniBlock {
+    id: number
+}
+
+const categories: Icategories[] = [
     {
         id   : randomID(),
         img  : faker.image.food(320, 220, true),
@@ -13,7 +17,6 @@ const categories: ICategoryMiniBlock[] = [
         img  : faker.image.abstract(320, 220, true),
         title: 'Abstract'
     },
-
     {
         id   : randomID(),
         img  : faker.image.cats(320, 220, true),

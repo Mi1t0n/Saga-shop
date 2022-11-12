@@ -25,7 +25,7 @@ const Title = styled.h4`
 `
 
 const CategoryMiniBlock: FC<ICategoryMiniBlock> = ({img, title}) =>
-    <Container to={`/category/${title.toLowerCase()}`}>
+    <Container to={`/category/${title.toLowerCase()}`} data-testid='linkto'>
         <Image src={img} loading={"lazy"}/>
         <Title>{title}</Title>
     </Container>

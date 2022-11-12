@@ -14,7 +14,9 @@ const InCartButton: FC<IInCartButton> = ({product}) => {
     const dispatch = useAppDispatch()
     const addHandler = () => dispatch(addToCart({...product, quantity: 1}))
 
-    return <InCart onClick={addHandler}>Add in cart</InCart>
+    return <InCart data-testid='inCartButton' onClick={addHandler}>Add in cart</InCart>
 }
 
 export default InCartButton;
+
+export {InCart}

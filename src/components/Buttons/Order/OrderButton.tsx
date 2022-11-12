@@ -15,7 +15,8 @@ const OrderButton:FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({...arg}) => {
     const dispatch = useAppDispatch()
     const postHandler = () => dispatch(postOrder())
 
-    return <Button onClick={postHandler} {...arg}>Order</Button>
+    return <Button data-testid='button' onClick={postHandler} {...arg}>Order</Button>
 }
 
 export default OrderButton;
+export {Button}

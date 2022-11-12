@@ -12,7 +12,7 @@ const DynamicCartButton: FC<IDynamicCartButton> = ({product}) => {
     return item ?
         <ChangeQuantityButton quantity={item.quantity}  remained={remained} id={id}/>
         :
-        <InCartButton product={product}/>
+        <InCartButton product={product} />
 }
 
 export default DynamicCartButton;

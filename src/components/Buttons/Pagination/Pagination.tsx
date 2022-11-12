@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import {IPagination} from "./IPagination";
 
 const Button = styled.button`
@@ -18,11 +18,23 @@ const Wrapper = styled.div`
 `
 
 
-const Pagination: FC<IPagination> = ({page, next, prev}) =>
-    <Wrapper>
-        <Button onClick={prev} data-testid='increase'>&lt;</Button>
-        <h3 data-testid='page'>{page}</h3>
-        <Button onClick={next} data-testid='decrease'>&gt;</Button>
-    </Wrapper>
+const Pagination: FC<IPagination> = ({getPage,maxPage}) => {
+    const [page, changePage] = useState<number>(1)
+
+    useEffect(() => {
+        getPage(page)
+    }, [page])
+
+    const increase = () => page < maxPage && changePage(page + 1)
+    const decrease = () => page > 1 && changePage(page - 1)
+
+    return (
+        <Wrapper>
+            <Button onClick={decrease} data-testid='decrease'>&lt;</Button>
+            <h3 data-testid='page'>{page}</h3>
+            <Button onClick={increase} data-testid='increase'>&gt;</Button>
+        </Wrapper>
+    )
+}
 
 export default Pagination;

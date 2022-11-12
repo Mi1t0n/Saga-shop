@@ -32,9 +32,9 @@ const ChangeQuantityButton: FC<IChangeQuantityButton> = ({id, quantity, remained
 
     return (
         <Wrapper>
-            <ChangeButton onClick={increase} style={cursor}>+</ChangeButton>
+            <ChangeButton  data-testid='increase' onClick={increase} style={cursor}>+</ChangeButton>
             <h4>{quantity}</h4>
-            <ChangeButton onClick={decrease}>-</ChangeButton>
+            <ChangeButton  data-testid='decrease' onClick={decrease}>-</ChangeButton>
         </Wrapper>
     );
 }

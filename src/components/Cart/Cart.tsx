@@ -4,6 +4,7 @@ import ProductInCart from "./ProductInCart/ProductInCart";
 import OrderButton from "../Buttons/Order/OrderButton";
 import {BarLoader} from "react-spinners";
 import Error from "../styled/Error";
+import Loader from "../styled/Loader";
 
 const Wrapper = styled.div`
 
@@ -18,11 +19,11 @@ const Empty = styled.div`
 
 const Cart = () => {
     const {products, error, loading} = useAppSelector(state => state.cart)
-    if (loading) return <BarLoader cssOverride={{margin: '10px 0'}} height={5} width={'100%'}/>
-    if (error) return <Error>Error : {error}</Error>
+    if (loading) return <Loader/>
+    if (error) return <Error data-testid='error'>Error : {error}</Error>
     if (!products.length) return <Empty>Cart is empty</Empty>
     return (
-        <Wrapper>
+        <Wrapper data-testid='products'>
             {
                 products.map(product => <ProductInCart {...product} key={product.id}/>)
             }

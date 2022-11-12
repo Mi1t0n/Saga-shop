@@ -10,13 +10,12 @@ const Error404 = styled.div`
   font-size: 106px;
   padding: 100px;
 `
-
 const RoutesPack = () =>
     <Routes>
-        <Route element={<Catalog/>} path={pagesPaths.Catalog}/>
-        <Route element={<Category/>} index path={pagesPaths.Category}/>
-        <Route element={<Cart/>} index path={pagesPaths.Cart}/>
-        <Route element={<Error404>404</Error404>} path={'*'}/>
+        <Route data-testid='catalog' element={<Catalog/>} path={pagesPaths.Catalog}/>
+        <Route data-testid='category' element={<Category/>} index path={pagesPaths.Category}/>
+        <Route data-testid='cart' element={<Cart/>} index path={pagesPaths.Cart}/>
+        <Route data-testid='error404' element={<Error404>404</Error404>} path={'*'}/>
     </Routes>
 
 

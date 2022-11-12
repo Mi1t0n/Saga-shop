@@ -1,7 +1,6 @@
 interface IPagination {
-    page: number
-    next: () => void
-    prev: () => void
+    getPage: (page: number) => void
+    maxPage:number
 }
 
 export type {IPagination}
