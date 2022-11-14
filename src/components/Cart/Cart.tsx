@@ -2,9 +2,9 @@ import styled from "styled-components";
 import {useAppSelector} from "../../hooks/reduxHooks";
 import ProductInCart from "./ProductInCart/ProductInCart";
 import OrderButton from "../Buttons/Order/OrderButton";
-import {BarLoader} from "react-spinners";
 import Error from "../styled/Error";
 import Loader from "../styled/Loader";
+import {cartSelector} from "../../selecors/cartSelectors";
 
 const Wrapper = styled.div`
 
@@ -18,7 +18,7 @@ const Empty = styled.div`
 `
 
 const Cart = () => {
-    const {products, error, loading} = useAppSelector(state => state.cart)
+    const {products, error, loading} = useAppSelector(cartSelector)
     if (loading) return <Loader/>
     if (error) return <Error data-testid='error'>Error : {error}</Error>
     if (!products.length) return <Empty>Cart is empty</Empty>

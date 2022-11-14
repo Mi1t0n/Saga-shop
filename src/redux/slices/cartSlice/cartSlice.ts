@@ -46,4 +46,5 @@ export const {
     postOrder,
     postOrderSuccess
 } = cartSlice.actions
+
 export default cartSlice.reducer;

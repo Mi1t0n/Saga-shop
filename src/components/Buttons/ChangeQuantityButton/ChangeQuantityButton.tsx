@@ -21,9 +21,8 @@ const ChangeQuantityButton: FC<IChangeQuantityButton> = ({id, quantity, remained
     const stillRemained = quantity !== remained
     const cursor = {cursor: stillRemained ? 'pointer' : 'not-allowed'}
 
-    const increase = () => {
-        if (stillRemained) dispatch(increaseQuantity(id))
-    }
+    const increase = () => stillRemained && dispatch(increaseQuantity(id))
+
 
     const decrease = () => {
         if (quantity === 1) return dispatch(deleteItem(id))
@@ -32,9 +31,9 @@ const ChangeQuantityButton: FC<IChangeQuantityButton> = ({id, quantity, remained
 
     return (
         <Wrapper>
-            <ChangeButton  data-testid='increase' onClick={increase} style={cursor}>+</ChangeButton>
+            <ChangeButton data-testid='increase' onClick={increase} style={cursor}>+</ChangeButton>
             <h4>{quantity}</h4>
-            <ChangeButton  data-testid='decrease' onClick={decrease}>-</ChangeButton>
+            <ChangeButton data-testid='decrease' onClick={decrease}>-</ChangeButton>
         </Wrapper>
     );
 }

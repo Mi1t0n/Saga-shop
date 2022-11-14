@@ -4,7 +4,6 @@ import {fireEvent, render, screen} from "@testing-library/react";
 import {find} from "styled-components/test-utils";
 import React from "react";
 import InCartButton, {InCart} from "./InCartButton";
-import {faker} from "@faker-js/faker";
 import {priceColors} from "../../styled/Price";
 
 jest.mock('react-redux')
@@ -14,7 +13,7 @@ const mockedProduct = {
     id           : 1111111111,
     title        : 'lorem',
     remained     : 111,
-    image        : faker.image.cats(320, 220, true),
+    image        : '54321',
     bgColor      : priceColors.Red,
     averageWeight: '111',
     price        : '1111'

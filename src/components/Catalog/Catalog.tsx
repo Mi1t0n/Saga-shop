@@ -5,11 +5,12 @@ import CategoryMiniBlock from "./CategoryMiniBlock/CategoryMiniBlock";
 import MainWrapper from "../styled/MainWrapper";
 import Error from "../styled/Error";
 import Loader from "../styled/Loader";
+import {categoriesSelector} from "selecors/categoriesSelectors";
 
 
 const Catalog = () => {
     const dispatch = useAppDispatch()
-    const {categories, loading, error} = useAppSelector(state => state.categories)
+    const {categories, loading, error} = useAppSelector(categoriesSelector)
 
     useEffect(() => {
         if (!categories.length) dispatch(getCategories())

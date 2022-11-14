@@ -3,10 +3,11 @@ import ChangeQuantityButton from "../ChangeQuantityButton/ChangeQuantityButton";
 import {FC} from "react";
 import {IDynamicCartButton} from "./IDynamicCartButton";
 import {useAppSelector} from "hooks/reduxHooks";
+import {productsSelector} from "selecors/cartSelectors";
 
 const DynamicCartButton: FC<IDynamicCartButton> = ({product}) => {
     const {id,remained} = product
-    const products = useAppSelector(state => state.cart.products)
+    const products = useAppSelector(productsSelector)
     const item = products.find(product => product.id === id)
 
     return item ?

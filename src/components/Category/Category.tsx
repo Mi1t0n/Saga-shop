@@ -6,10 +6,11 @@ import Product from "./Product/Product";
 import Error from "../styled/Error";
 import Pagination from "../Buttons/Pagination/Pagination";
 import Loader from "../styled/Loader";
+import {categoriesSelector} from "selecors/categoriesSelectors";
 
 const Category = () => {
     const {type} = useParams<string>()
-    const {subValues, loading, error} = useAppSelector(state => state.categories)
+    const {subValues, loading, error} = useAppSelector(categoriesSelector)
     const dispatch = useAppDispatch()
 
     const getPage = (page: number) => type && dispatch(getSubValues({type, page, limit: 8}))

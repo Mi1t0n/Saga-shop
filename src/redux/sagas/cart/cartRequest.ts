@@ -1,6 +1,8 @@
 import axios from "axios";
+import {IProductInCart} from "components/Cart/ProductInCart/IProductInCart";
 
-const postOrder = (products: any) => axios.post('/orders', products)
+type products = Pick<IProductInCart, 'id' | 'quantity' | 'title'>
+const postOrder = (products: products[]) => axios.post('/orders', products)
 
 
 export {postOrder}
